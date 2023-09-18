@@ -1,62 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English to Hindi Translation with ChatGPT</title>
-    <link rel="stylesheet" href="style.css">
+
+  <title>Cybersecurity Blog: DDoS Attacks</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
-    <h1>English to Hindi Translation with ChatGPT</h1>
+  <header>
+    <h1>Cybersecurity Blog</h1>
+  </header>
 
-    <label for="englishText">Enter English Text:</label>
-    <input type="text" id="englishText" placeholder="Type your text here">
-    <button onclick="translate()">Translate</button>
+  <main>
+    <h2>DDoS Attacks on Websites</h2>
+    <p>
+      Distributed Denial of Service (DDoS) attacks are a significant threat to websites and online services. In a DDoS attack, a malicious actor overwhelms a target website's servers by flooding them with a massive amount of traffic. This excessive traffic makes it challenging for legitimate users to access the website, effectively causing a denial of service.
+    </p>
+    <p>
+      DDoS attacks are often executed using botnets, which are networks of compromised computers or devices that are controlled by the attacker. These botnets can generate enormous amounts of traffic, making the attack even more devastating.
+    </p>
+    <p>
+      DDoS attacks come in various forms, including UDP flood attacks, SYN flood attacks, and HTTP/HTTPS request attacks. Each type targets different aspects of a website's infrastructure, making them difficult to mitigate.
+    </p>
+    <p>
+      Website owners and administrators must implement robust DDoS protection strategies to safeguard their online presence. This includes using specialized DDoS protection services, load balancing, rate limiting, and traffic filtering to mitigate the impact of such attacks.
+    </p>
+    <p>
+      Cybersecurity experts continually work on improving DDoS defense mechanisms as attackers find new ways to bypass traditional security measures. By staying informed and proactive, website owners can better protect their online assets from DDoS attacks.
+    </p>
 
-    <p>Translated Text:</p>
-    <p id="translatedText"></p>
+    <!-- Contact Me Button -->
+    <a class="contact-btn" href="https://telegram.me/niceur" target="_blank">Contact Me</a>
+  </main>
 
-    <script>
-        const apiKey = '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'; // Replace with your ChatGPT API key
-        const chatgptEndpoint = 'https://api.openai.com/v1/engines/davinci/completions';
-
-        function translate() {
-            const englishText = document.getElementById('englishText').value;
-            const translatedTextElement = document.getElementById('translatedText');
-
-            // Check if the input text is not empty
-            if (englishText.trim() === '') {
-                translatedTextElement.textContent = 'Please enter some text.';
-                return;
-            }
-
-            // Make a request to the ChatGPT API for translation
-            fetch(chatgptEndpoint, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${apiKey}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    prompt: `Translate the following English text to Hindi: "${englishText}"`,
-                    max_tokens: 50 // You can adjust the token limit as needed
-                })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.choices && data.choices.length > 0) {
-                        const translatedText = data.choices[0].text;
-                        translatedTextElement.textContent = translatedText;
-                    } else {
-                        translatedTextElement.textContent = 'Translation not available.';
-                    }
-                })
-                .catch(error => {
-                    console.error(error);
-                    translatedTextElement.textContent = 'Error occurred during translation.';
-                });
-        }
-    </script>
+  <footer>
+    <p>Contact us at kartik2004rajput@gmail.com</p>
+  </footer>
+  <a class="scroll-down-btn" href="#page2">Next</a>
+  <script src="script.js"></script>
 </body>
 </html>
